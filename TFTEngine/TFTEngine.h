@@ -10,10 +10,10 @@ class TFTEngine
         void begin(int rate);
         void setBaudrate(int rate);
         void cls();
-        void draw(TFTObject obj);
+        void draw(TFTObject *obj);
         void render();
     private:
-        void _cleanObject(TFTObject obj);
+        void _cleanObject(TFTObject *obj);
         SoftwareSerial *_tft;
 };
 #endif

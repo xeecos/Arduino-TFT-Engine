@@ -14,8 +14,8 @@ struct vector3d{
 class TFTObject{
     public:
         TFTObject();
-        String clear();
-        String render();
+        virtual String clear() { return ""; };
+        virtual String render() { return ""; };
 
 };
 

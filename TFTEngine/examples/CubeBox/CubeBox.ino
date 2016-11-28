@@ -13,12 +13,13 @@ vector2d positions[8];
 TFTLine lines[12];
 void setup() 
 {
+  
+  Serial.begin(115200);
   for(int i=0;i<8;i++){
     points[i].x = verts[i*3]*4;
     points[i].y = verts[i*3+1]*4;
     points[i].z = verts[i*3+2]*4;
   }
-  Serial.begin(115200);
   tft.begin(115200);
   delay(1000);
   tft.cls();
@@ -33,14 +34,14 @@ void loop()
   ty = ty>359?0:tx;
   drawView();
   tft.render();
-  delay(25);
+  delay(1000);
 }
 
 void drawView() 
 {
   int i;
-  t=tx*PI/180.0;
-  p=ty*PI/180.0;
+  float t=tx*PI/180.0;
+  float p=ty*PI/180.0;
   for(i=0;i<8;i++){
     currentPoints[i] = pointNewView(points[i],t,p);
     positions[i].x = cx+focalLength/(focalLength-currentPoints[i].x)*currentPoints[i].y;
@@ -49,7 +50,7 @@ void drawView()
   for(i=0;i<12;i++){
     lines[i].start(positions[vertices[i*2]].x,positions[vertices[i*2]].y);
     lines[i].end(positions[vertices[i*2+1]].x,positions[vertices[i*2+1]].y);
-    tft.draw(lines[i]);
+    tft.draw(&lines[i]);
   }
 }
 

@@ -15,13 +15,13 @@ void TFTEngine::setBaudrate(int rate){
 void TFTEngine::cls(){
     _tft->print("CLS(0);DR0;");
 }
-void TFTEngine::draw(TFTObject obj){
+void TFTEngine::draw(TFTObject* obj){
     _cleanObject(obj);
-    _tft->print(obj.render());
+    _tft->print(obj->render());
 }
 void TFTEngine::render(){
     _tft->println();
 }
-void TFTEngine::_cleanObject(TFTObject obj){
-    _tft->print(obj.clear());
+void TFTEngine::_cleanObject(TFTObject* obj){
+    _tft->print(obj->clear());
 }
