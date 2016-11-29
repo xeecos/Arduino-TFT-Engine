@@ -6,7 +6,7 @@ class TFTText:public TFTObject{
     TFTText();
     void text(String msg);
     void position(int x,int y);
-    void setSize(int size);
+    void size(int size);
     void setColor(int c);
     void setBackgroundColor(int c);
     void setBackgroundMode(int mode);

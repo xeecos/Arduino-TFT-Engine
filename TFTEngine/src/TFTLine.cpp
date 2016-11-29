@@ -17,12 +17,14 @@ String TFTLine::render(){
     r+=(",");
     r+=(_end.y);
     r+=(",");
+    String tmp = _cls;
     _cls = r;
     _cls+=0;
     _cls+=");";
     r+=_color;
     r+= ");";
-    return r;
+    tmp += r;
+    return tmp;
 }
 void TFTLine::start(float x,float y){
     _start.x = floor(x);

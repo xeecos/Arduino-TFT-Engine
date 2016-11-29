@@ -13,7 +13,6 @@ void TFTEngine::cls(){
     TFTEngine::print("CLS(0);DR0;");
 }
 void TFTEngine::draw(TFTObject* obj){
-    _cleanObject(obj);
     TFTEngine::print(obj->render());
 }
 void TFTEngine::render(){

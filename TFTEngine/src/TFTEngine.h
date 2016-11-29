@@ -2,6 +2,7 @@
 #define TFTEngine_H_
 #include <SoftwareSerial.h>
 #include "TFTLine.h"
+#include "TFTText.h"
 class TFTEngine:public SoftwareSerial
 {
     public:
