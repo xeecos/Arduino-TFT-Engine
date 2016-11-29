@@ -12,8 +12,8 @@ class TFTLine : public TFTObject{
         String clear();
         String render();
     private:
-        vector2d _start;
-        vector2d _end;
+        pixel2d _start;
+        pixel2d _end;
         int _color;
         String _cls;
 };

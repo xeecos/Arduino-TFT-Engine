@@ -1,7 +1,7 @@
 #include "TFTEngine.h"
 #include <SoftwareSerial.h>
 
-TFTEngine tft(12,13);
+TFTEngine tft(A3,A2);
 
 float cx = 160, cy = 120, focalLength = 2000.0;
 int tx=0,ty=0;
@@ -31,10 +31,10 @@ void loop()
   tx+=10;
   ty+=10;
   tx = tx>359?0:tx;
-  ty = ty>359?0:tx;
+  ty = ty>359?0:ty;
   drawView();
   tft.render();
-  delay(1000);
+  delay(25);
 }
 
 void drawView() 

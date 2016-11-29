@@ -25,12 +25,12 @@ String TFTLine::render(){
     return r;
 }
 void TFTLine::start(float x,float y){
-    _start.x = x;
-    _start.y = y;
+    _start.x = floor(x);
+    _start.y = floor(y);
 }
 void TFTLine::end(float x,float y){
-    _end.x = x;
-    _end.y = y;
+    _end.x = floor(x);
+    _end.y = floor(y);
 }
 void TFTLine::setColor(int c){
     _color = c;            
